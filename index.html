@@ -1,271 +1,208 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Profile - Parashmani Datta</title>
+    
+    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Lightbox CSS for Certificates -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    
     <style>
         body {
-    font-family: 'Times New Roman', serif;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    color: #333;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header {
-    text-align: center;
-    padding: 10px 20px;
-    background-color: rgb(92, 226, 74);
-    color: white;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 1200px;
-    animation: fadeInDown 1s;
-    box-sizing: border-box; /* Ensures padding is included in total height */
-}
-
-h1 {
-    font-size: 2.5rem;
-    background: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: vibgyor 5s infinite;
-}
-
-@keyframes vibgyor {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Main container for layout */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 1200px;
-    gap: 20px;
-}
-
-.top-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.profile, .awards {
-    flex: 1;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    animation: fadeInUp 1s;
-    min-width: 250px; /* Prevent sections from collapsing too much */
-}
-
-.authored-book {
-    background: linear-gradient(145deg, #f5f7fa, #c3cfe2); /* Gradient background */
-    border-radius: 15px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    max-width: 800px; /* Constrain the width */
-    margin: 0 auto; /* Center the block */
-    animation: fadeInUp 1s ease-out;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.authored-book h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: bold;
-}
-
-.scribd_iframe_embed {
-    border-radius: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.authored-book p {
-    font-family: Helvetica, Arial, Sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #333;
-    margin: 10px auto;
-    text-align: center;
-}
-
-.authored-book a {
-    text-decoration: underline;
-    color: #0073e6;
-}
-
-.authored-book a:hover {
-    color: #005bb5;
-}
-
-.profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    transition: transform 0.3s;
-}
-
-.profile img:hover {
-    transform: scale(1.1);
-}
-
-.profile p {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    background: linear-gradient(to right, rgb(121, 24, 185), rgb(139, 240, 25), rgb(188, 228, 29), rgb(87, 25, 231));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Ensures gradient text is visible */
-    color: transparent; /* Compatibility with modern browsers */
-    animation: fadeIn 1.5s;
-    display: inline-block; /* Required for gradient clipping */
-}
-
-.profile h4 {
-    font-size: 1.2rem; /* Adjusted for readability */
-    color: rgb(247, 74, 74);
-    font-weight: bold;
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-.awards .award-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.award-item {
-    text-align: center;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.award-thumbnail {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    object-fit: cover;
-}
-
-footer p {
-    color: #555;
-    animation: fadeInUp 1s;
-}
-
-
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background 0.5s, color 0.5s;
+        }
         
+        /* Dark Mode */
+        .dark-mode {
+            background: #121212;
+            color: #eee;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #5ce24a;
+            color: white;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1s;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: vibgyor 5s infinite;
+        }
+
+        @keyframes vibgyor {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        /* Profile */
+        .profile {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s;
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        /* Awards */
+        .awards, .book, .certificates {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            animation: fadeInUp 1s;
+        }
+
+        /* Floating Social Icons */
+        .social-icons {
+            position: fixed;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Dark Mode Button at Bottom Right */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .dark-mode-toggle:hover {
+            background: #555;
+        }
         
     </style>
 </head>
 <body>
-    <header class="animate__animated animate__fadeInDown">
-        <img src="https://study.iitm.ac.in/ds/assets/img/IITMOD-Logo.svg" alt="IIT Madras Logo" style="width: 150px; height: auto; margin-bottom: 20px;">
+    <!-- Header -->
+    <header>
+        <img src="https://study.iitm.ac.in/ds/assets/img/IITMOD-Logo.svg" alt="IIT Madras Logo" style="width: 150px;">
         <h1>Welcome to My Profile</h1>
     </header>
 
     <div class="container">
-        <div class="profile animate__animated animate__fadeInUp">
-            <img src="https://lh3.googleusercontent.com/a/ACg8ocL9FcULfO1gyPTGDwNVGDomeWjQ18bvUnX217t_u2juPDExttKl=s288-c-no" alt="Profile Photo">
-            <h2>Mr. Parashmani Datta.</h2>
-            <h4>InSc. Scholar | DS/ML IIT Madras | Ex. Asst. Prof of Chemistry Loyola College (Kunkuri, CG) <br>
-               Guest Faculty | Author - "Chemistry in Infinite Dimensions" | CEGR Awardee.</h4>
-            <p>
-                I am a passionate Chemistry educator with over 11 years of experience in teaching and mentoring students. 
-                My journey blends <strong>traditional teaching methodologies with modern advancements in technology</strong>, 
-                such as <em>Data Science (DS) and machine learning (ML)</em>. 
-            </p>
-            <p>
-                With a strong academic foundation, including a Master’s in Chemistry and in DS/ML 
-                from <strong>IIT Madras</strong>, I strive to create innovative and engaging learning environments. 
-                Recognized for my dedication to education, I have been honored with awards such as the 
-                <strong>"Best Faculty of the Year 2021 from 16th Rashtriya Shiksha Gaurav Puraskar (CEGR)"</strong> and the <strong>Institute of Scholar (InSc) Award</strong>.
-            </p>
-            <h3><a href="https://drive.google.com/file/d/12dwF6SABKgy6_oJ918J8F482k5logdv0/view?usp=sharing" download>Download Biodata</a></h3>
-           <h3><a href="https://github.com/ParashmaniDatta">Github</a></h3>
-          <h3><a href="https://www.linkedin.com/in/parashmani-datta" target="_blank">LinkedIn</a></h3>
+        <!-- Profile Section -->
+        <div class="profile">
+            <img id="profile-img" src="https://lh3.googleusercontent.com/a/ACg8ocL9FcULfO1gyPTGDwNVGDomeWjQ18bvUnX217t_u2juPDExttKl=s288-c-no" alt="Profile Photo">
+            <h2>Mr. Parashmani Datta</h2>
+            <h4>  DS/AI @ IIT Madras | InSc. Scholar | Author " Chemistry in Infinite Dimensions" | Asst. Professor.</h4>
         </div>
-        
-        
-       <div class="awards animate__animated animate__fadeInUp">
-    <h3>Awards and Achievements</h3>
-    <div class="award-grid">
-        <!-- Award 1 -->
-        <div class="award-item">
-            <p>Microsoft Certifications</p>
-            <a href="https://drive.google.com/file/d/1DPCrtHBRuDMqFpTPeQslD3SFz5MDJ_CN/view?usp=sharing" download>Download</a>
+
+        <!-- Awards Section -->
+        <div class="awards">
+            <h3>Awards and Achievements</h3>
+            <p><a href="https://drive.google.com/file/d/12dwF6SABKgy6_oJ918J8F482k5logdv0/view?usp=sharing" download>Biodata</a></p>	
+            <p><a href="https://drive.google.com/file/d/1FtYKN0PHbIVAWeQnA4RP4vNm7VzNA3Fa/view?usp=sharing" download>16th Rashtriya Shiksha Gaurav Puraskar</a></p>
+            <p><a href="https://drive.google.com/file/d/1DPCrtHBRuDMqFpTPeQslD3SFz5MDJ_CN/view?usp=sharing" download>Microsoft Certifications</a></p>
+            <p><a href="https://drive.google.com/file/d/1-L17SYjD8q8V9zx1fpvxegNWRvVja27e/view?usp=sharing" download>PAN INDIA ML Challenge - 2nd Place</a></p>
+            <p><a href="https://drive.google.com/drive/folders/18wyq1tI-m3dFbmAdkFllMZzpoqCpT9MM?usp=drive_link" download>Educational certificates</a></p>
+            
         </div>
-        <!-- Award 2 -->
-        <div class="award-item">
-            <p>PAN INDIA ML Challenge 2nd Position</p>
-            <a href="https://drive.google.com/file/d/1-L17SYjD8q8V9zx1fpvxegNWRvVja27e/view?usp=sharing" download>Download</a>
+
+        <!-- Book Section -->
+        <div class="book">
+            <h3>Authored Book: Chemistry in Infinite Dimensions</h3>
+            <iframe src="https://www.scribd.com/embeds/813939027/content?start_page=2&view_mode=slideshow&access_key=key-I1jkWkBIjXWRNSqOlDbD" width="100%" height="500"></iframe>
         </div>
-        <!-- Award 3 -->
-        <div class="award-item">
-            <p>16th Rashtriya Siksha Gaurav Puraskar</p>
-            <a href="https://drive.google.com/file/d/1FtYKN0PHbIVAWeQnA4RP4vNm7VzNA3Fa/view?usp=sharing" download>Download</a>
-            <h2>Educational Certificates</h2>
-            <a href="https://drive.google.com/drive/folders/18wyq1tI-m3dFbmAdkFllMZzpoqCpT9MM?usp=sharing" download>Download</a>
+
+        <!-- Project-->
+        <div class="Project">
+            <h3>Data Analytics Project</h3>
+            <iframe src="https://www.scribd.com/embeds/813931410/content?start_page=1&view_mode=scroll&access_key=key-xJ2xFZlLwOuTO9mhHRui" width="100%" height="350"></iframe>
         </div>
     </div>
-    <div class="book animate__animated animate__fadeInUp">
-        <h3>Authored Book</h3>
-        <iframe class="scribd_iframe_embed" title="Chemistry in Infinite Dimensions" 
-                src="https://www.scribd.com/embeds/813939027/content?start_page=2&view_mode=slideshow&access_key=key-I1jkWkBIjXWRNSqOlDbD" 
-                tabindex="0" data-auto-height="false" data-aspect-ratio="1.414442700156986" 
-                scrolling="no" width="525" height="700" frameborder="0"></iframe>
-        <p style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; font-size-adjust: none; font-stretch: normal; -x-system-font: none; display: block;">
-            <a title="View Chemistry in Infinite Dimensions on Scribd" 
-               href="https://www.scribd.com/document/813939027/Chemistry-in-Infinite-Dimensions#from_embed" 
-               style="text-decoration: underline;">Chemistry in Infinite Dimen...</a> by 
-            <a title="View parash9804's profile on Scribd" 
-               href="https://www.scribd.com/user/825027464/parash9804#from_embed" 
-               style="text-decoration: underline;">Mr. Parashmani Datta</a>
-        </p>
-    </div>
-    
-    <div class="certificates">
-        <h3>Data Analytics in Chemistry Project</h3>
-        <iframe class="scribd_iframe_embed" title="Introduction of Price Anchoring Strategy" src="https://www.scribd.com/embeds/813931410/content?start_page=1&view_mode=scroll&access_key=key-xJ2xFZlLwOuTO9mhHRui" tabindex="0" data-auto-height="true" data-aspect-ratio="1.7790927021696252" scrolling="no" width="100%" height="350" frameborder="0"></iframe>
-        <p style="margin: 12px auto 6px auto; font-family: Helvetica, Arial, Sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; font-size-adjust: none; font-stretch: normal; display: block;">
-            <a title="View Introduction of Price Anchoring Strategy on Scribd" href="https://www.scribd.com/document/813931410/Introduction-of-Price-Anchoring-Strategy#from_embed" style="text-decoration: underline;">Introduction of Price Ancho...</a> by 
-            <a title="View parash9804's profile on Scribd" href="https://www.scribd.com/user/825027464/parash9804#from_embed" style="text-decoration: underline;">Mr. Parashmani Datta</a>
-        </p>
-    </div>
-</div>
 
+    <!-- Floating Social Icons -->
+    <div class="social-icons">
+        <a href="https://github.com/ParashmaniDatta"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30"></a>
+        <a href="https://www.linkedin.com/in/parashmani-datta"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30"></a>
+        <a href="https://api.whatsapp.com/send?phone=+919804183208"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30" alt="WhatsApp">
+         <a href="https://t.me/@parashmani"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" width="30" alt="Telegram">
+</a>
 
-
+</a>
 
     </div>
-    
-    <footer>
-        <p>&copy; 2025 Parashmani. All rights reserved.</p>
-    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>
