@@ -123,19 +123,26 @@
   .loop text { font-family: var(--display); font-size: 13px; font-weight: 600; fill: var(--ink-soft); }
   @keyframes draw { to { stroke-dashoffset: 0; } }
   @keyframes appear { to { opacity: 1; } }
-  .alum { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 8px; font-family: var(--display); font-size: .9rem; color: var(--ink-soft); }
+  .alum-unused { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 8px; font-family: var(--display); font-size: .9rem; color: var(--ink-soft); }
   .alum img { height: 30px; width: auto; }
   :root[data-theme="dark"] .alum img { filter: brightness(0) invert(.85); }
 
   /* Sections */
   section.block { padding: 64px 0; border-top: 1px solid var(--line); }
   .block h2 {
-    margin: 0 0 8px;
+    margin: 0 0 20px;
     font-family: var(--display); font-weight: 800;
     font-size: clamp(1.9rem, 4vw, 2.6rem); letter-spacing: -.02em; line-height: 1.1;
   }
-  .block .lead { margin: 0 0 32px; color: var(--ink-soft); max-width: 60ch; }
+  .block .lead { margin: -8px 0 32px; color: var(--ink-soft); max-width: 60ch; }
 
+  .cred { display: inline-flex; align-items: center; gap: 16px; margin: 4px 0 22px; padding: 12px 20px 12px 14px; background: var(--sheet); border: 1px solid var(--line); border-radius: 14px; }
+  .cred img { height: 52px; width: auto; }
+  .cred strong { display: block; font-family: var(--display); font-weight: 700; font-size: 1.15rem; line-height: 1.25; }
+  .cred span { font-family: var(--display); color: var(--ink-soft); font-size: .95rem; }
+  :root[data-theme="dark"] .cred img { filter: brightness(0) invert(.9); }
+  .head-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+  .head-row h2 { margin: 0; }
   /* Profile PDF */
   .pdf { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; align-items: start; }
   .pdf ul { margin: 0 0 28px; padding: 0; list-style: none; }
@@ -145,7 +152,7 @@
     background: var(--sheet); border: 1px solid var(--line); border-radius: 14px; padding: 10px;
     box-shadow: 0 1px 0 var(--line), 12px 12px 0 -1px var(--marker);
   }
-  .viewer iframe { display: block; width: 100%; height: 640px; border: 0; border-radius: 8px; background: #fff; }
+  .viewer iframe { display: block; width: 100%; height: 820px; border: 0; border-radius: 8px; background: #fff; }
   .viewer p { margin: 10px 6px 2px; font-size: .9rem; color: var(--ink-soft); }
 
   /* Awards: a ledger, not a card grid */
@@ -241,12 +248,16 @@
     <div class="wrap">
       <div>
         <h1>Parashmani Datta</h1>
-        <p class="intro">I teach, I research how people learn, and I build the tools to prove it works.</p>
-        <p class="facts">Founder of the ChemYukti Learning Operating System, built on CHEM (Cybernetics &amp; Human Engineering Methods). Former Assistant Professor at Loyola College. Author of <em>Organic Chemistry in Infinite Dimensions</em>.</p>
+        <p class="intro">Educator and researcher in adaptive learning and cybernetics.</p>
+        <div class="cred">
+          <img src="https://study.iitm.ac.in/ds/assets/img/IITMOD-Logo.svg" alt="IIT Madras logo">
+          <div><strong>Indian Institute of Technology Madras</strong><span>Alumnus</span></div>
+        </div>
+        <p class="facts">Founder, ChemYukti Learning Operating System, built on CHEM (Cybernetics &amp; Human Engineering Methods).<br>Former Assistant Professor, Loyola College.<br>Author, <em>Organic Chemistry in Infinite Dimensions</em>.</p>
         <div class="actions">
           <a class="btn solid" href="#profile">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
-            Read my profile
+            View profile
           </a>
           <a class="btn ghost" href="https://drive.google.com/file/d/1exCN9qyKJiPllkW5grBdnEm0ACPYQRym/view?usp=sharing" target="_blank" rel="noopener">View biodata</a>
         </div>
@@ -264,43 +275,28 @@
           </svg>
           <img src="https://lh3.googleusercontent.com/a/ACg8ocL9FcULfO1gyPTGDwNVGDomeWjQ18bvUnX217t_u2juPDExttKl=s288-c-no" alt="Portrait of Parashmani Datta">
         </div>
-        <div class="alum">
-          <img src="https://study.iitm.ac.in/ds/assets/img/IITMOD-Logo.svg" alt="IIT Madras">
-          <span>Alumnus</span>
-        </div>
       </div>
     </div>
   </section>
 
   <section class="block" id="profile">
-    <div class="wrap pdf">
-      <div>
-        <h2>My profile, on two pages</h2>
-        <p class="lead">Everything in one place: research, awards and the platforms I have built. Read it here or take a copy with you.</p>
-        <ul>
-          <li><strong>Research.</strong> Principal Investigator of the CHEM framework, with DOI-linked papers.</li>
-          <li><strong>Recognition.</strong> 14th Rashtriya Shiksha Gaurav Puraskar and a national 2nd place at IIT Madras.</li>
-          <li><strong>Platforms.</strong> ChemYukti, PratiPariksha and SpeechNova.</li>
-        </ul>
-        <div class="actions">
-          <a class="btn solid" href="https://drive.google.com/uc?export=download&id=1C8t8aBQ9BshUH8qDnkjy-yzg69KQitET">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-            Download PDF
-          </a>
-          <a class="btn ghost" href="https://drive.google.com/file/d/1C8t8aBQ9BshUH8qDnkjy-yzg69KQitET/view?usp=drive_link" target="_blank" rel="noopener">Open in Google Drive</a>
-        </div>
+    <div class="wrap">
+      <div class="head-row">
+        <h2>Profile</h2>
+        <a class="btn solid" href="https://drive.google.com/uc?export=download&id=1C8t8aBQ9BshUH8qDnkjy-yzg69KQitET">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Download PDF
+        </a>
       </div>
       <div class="viewer">
-        <iframe src="https://drive.google.com/file/d/1C8t8aBQ9BshUH8qDnkjy-yzg69KQitET/preview" title="Profile highlight of Parashmani Datta (PDF)" loading="lazy" allow="autoplay"></iframe>
-        <p>If the preview does not load on your device, use the Open in Google Drive button.</p>
+        <iframe src="https://drive.google.com/file/d/1C8t8aBQ9BshUH8qDnkjy-yzg69KQitET/preview" title="Profile of Parashmani Datta (PDF)" loading="lazy" allow="autoplay"></iframe>
       </div>
     </div>
   </section>
 
   <section class="block" id="awards">
     <div class="wrap">
-      <h2>Awards and certificates</h2>
-      <p class="lead">Each one opens the original certificate in Google Drive.</p>
+      <h2>Awards and certifications</h2>
       <ul class="ledger">
         <li>
           <div>
@@ -312,21 +308,28 @@
         <li>
           <div>
             <h3><span class="hl">2nd place, All-India AI Text Detection Challenge</span></h3>
-            <p>IIT Madras, 2024. Built a model that spots AI-written text, scoring a macro-F1 of 0.983 against 127 teams.</p>
+            <p>IIT Madras, 2024. Macro-F1 score of 0.983 in detecting AI-generated text; ranked 2nd of 127 teams.</p>
           </div>
           <a class="view" href="https://drive.google.com/file/d/1-L17SYjD8q8V9zx1fpvxegNWRvVja27e/view?usp=sharing" target="_blank" rel="noopener">View certificate</a>
         </li>
         <li>
           <div>
             <h3>National Pension System Hackathon, final round</h3>
-            <p>Government-funded hackathon. Reached the last stage with an offline NPS app.</p>
+            <p>Government-funded hackathon. Reached the final level with an offline NPS application.</p>
           </div>
         </li>
         <li>
           <div>
             <h3>AI for Bharat Challenge</h3>
-            <p>Entered SpeechNova, an offline speech-to-speech translator for Android.</p>
+            <p>Entry: SpeechNova, an offline speech-to-speech translator for Android.</p>
           </div>
+        </li>
+        <li>
+          <div>
+            <h3>Arm certification</h3>
+            <p>Professional certification from Arm.</p>
+          </div>
+          <a class="view" href="https://drive.google.com/file/d/1Ems2V5h3MHZLdV96aZFt8oH5_qt-H97V/view?usp=sharing" target="_blank" rel="noopener">View certificate</a>
         </li>
         <li>
           <div>
@@ -338,7 +341,7 @@
         <li>
           <div>
             <h3>Educational certificates</h3>
-            <p>Degree and academic records in one folder.</p>
+            <p>Degree and academic records.</p>
           </div>
           <a class="view" href="https://drive.google.com/drive/folders/18wyq1tI-m3dFbmAdkFllMZzpoqCpT9MM?usp=drive_link" target="_blank" rel="noopener">Open folder</a>
         </li>
@@ -348,14 +351,14 @@
 
   <section class="block" id="work">
     <div class="wrap">
-      <h2>What I work on</h2>
-      <p class="lead">My work sits across disciplines, with cybernetics at the centre: feedback, control and self-regulation, applied to how people learn.</p>
+      <h2>Research and platforms</h2>
+      <p class="lead">Interdisciplinary, with a focus on cybernetics: feedback, control and self-regulation applied to learning.</p>
       <div class="work">
         <div>
           <h3>Research</h3>
           <div class="entry">
             <b>CHEM: A Formal Mathematical Framework for Adaptive Learning Systems</b>
-            <p>I lead this as Principal Investigator. It models learning as a closed feedback loop, formalised through 22 mathematical models.</p>
+            <p>Principal Investigator. Models learning as a closed feedback loop, formalised through 22 mathematical models.</p>
             <p class="doi"><a href="https://doi.org/10.35542/osf.io/bst6c_v1" target="_blank" rel="noopener">doi:10.35542/osf.io/bst6c_v1</a></p>
           </div>
           <div class="entry">
@@ -369,7 +372,7 @@
           </div>
         </div>
         <div>
-          <h3>Platforms I have built</h3>
+          <h3>Platforms</h3>
           <div class="entry">
             <b>ChemYukti</b><span class="role">Founder</span>
             <p>A Learning Operating System built on CHEM. Across two 90-day cohorts, base attainment rose by 10 percentage points.</p>
@@ -377,12 +380,13 @@
           </div>
           <div class="entry">
             <b>PratiPariksha</b>
-            <p>An online exam platform for schools. It checks in on how students are feeling before a test, explains answers afterwards, and gives teachers item-level analytics.</p>
+            <p>Computer-based testing platform and LMS for schools, with a pre-exam wellbeing check-in, AI-generated answer explanations and item-level IRT analytics.</p>
             <p class="doi"><a href="https://pratipariksha.org" target="_blank" rel="noopener">pratipariksha.org</a></p>
           </div>
           <div class="entry">
             <b>SpeechNova</b>
-            <p>Speak in one language, hear it in another, even without internet. Android app on Google Play.</p>
+            <p>Offline, real-time speech-to-speech translation for Android.</p>
+            <p class="doi"><a href="https://play.google.com/store/apps/details?id=com.parashmani.speechnova" target="_blank" rel="noopener">Download on Google Play</a></p>
           </div>
         </div>
       </div>
@@ -391,8 +395,7 @@
 
   <section class="block" id="reading">
     <div class="wrap">
-      <h2>Read my work</h2>
-      <p class="lead">Browse the book or my data analytics project right here.</p>
+      <h2>Book and project</h2>
       <div class="tabs" role="tablist" aria-label="Documents">
         <button type="button" role="tab" id="tab-book" aria-controls="panel-book" aria-selected="true">Organic Chemistry in Infinite Dimensions</button>
         <button type="button" role="tab" id="tab-project" aria-controls="panel-project" aria-selected="false" tabindex="-1">Data analytics project</button>
@@ -408,8 +411,7 @@
 
   <section class="block" id="contact">
     <div class="wrap">
-      <h2>Get in touch</h2>
-      <p class="lead">Happy to talk about teaching, research collaborations or the platforms.</p>
+      <h2>Contact</h2>
       <div class="contact">
         <a href="https://www.linkedin.com/in/parashmani-datta" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>
